@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Register</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/registration/registration.css"/>
+    
+</head>
+<body>
+		<div class="container">
+		<header>
+			<h1 class="text-center">Registration</h1>
+		</header>
+		</div>
+		
+		<div class="container">
+				<div class="box">
+					<form action="/register/process" method="POST">
+					<div class="form-group">
+						<label>
+							Insert your name:<input class="form-control" type="text" name="name" />
+						</label>
+						<label>
+							Insert your password:<input class="form-control" type="password" name="password" />
+						</label>
+					</div>
+						<input class="btn btn-success" type="submit"  value="Submit"/>
+					</form>
+				</div>
+		</div>
+	
+	
+
+</body>
+</html>

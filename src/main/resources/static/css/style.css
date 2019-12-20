@@ -1,0 +1,101 @@
+
+body{
+background: lightgrey;
+
+}
+
+h1{
+	padding-top:1em;
+	padding-bottom: 1.4em;
+}
+
+.card-body{
+	background: black;
+}
+.card-body p{
+	text-align: center;
+	
+}
+.card-body a{
+	text-decoration: none;
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing:  0.1em;
+}
+.strip{
+	background: beige;
+}
+
+header p{
+	font-size: 1.5em;
+	text-transform: uppercase;
+}
+.dropdown-menu.show{
+	
+	padding: 0.4em;
+}
+.dropdown-item:hover{
+	background: none;
+}
+.navbar-light .navbar-nav .nav-link
+{
+	color:black;
+}
+
+/***
+*********
+**RATING 
+*/
+
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    position: relative;
+    bottom: 1.8em;
+}
+
+.rating>input {
+    display: none
+}
+
+.rating>label {
+    position: relative;
+    width: 1em;
+    font-size: 4vw;
+    color: #ffff00;
+    cursor: pointer
+}
+
+.rating>label::before {
+    content: "\2605";
+    position: absolute;
+    opacity: 0
+}
+
+.rating>label:hover:before,
+.rating>label:hover~label:before {
+    opacity: 1 !important
+}
+
+.rating>input:checked~label:before {
+    opacity: 1
+}
+
+.rating:hover>input:checked~label:before {
+    opacity: 0.4
+}
+
+.rate p{
+	font-size: 1.6em;
+}
+
+
+
+
+@media (max-width:760px){
+	.card-body a {
+		font-size: 0.6em  ;
+	}
+}

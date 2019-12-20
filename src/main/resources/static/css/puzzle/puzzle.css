@@ -1,0 +1,31 @@
+.content{
+	
+margin: 0 auto;
+}
+.list-item{
+    list-style: none;
+    padding-left: 0;
+    margin: 0 auto;
+    
+}
+
+.list-item li{
+    display: inline-block;
+    font-size: 1.2em;
+}
+
+.table td, .table th{
+	padding: 0;
+}
+
+
+.card-img-top{
+	width: 10em;
+}
+.list-group{
+	max-width: 20em;
+}
+
+.comment h3{
+	color: #bada55;
+}

@@ -1,0 +1,23 @@
+h3{
+	padding-top: 0.3em;
+	margin-top: 0.3em;
+}
+.box{
+	background: white;
+	padding: 0.4em;
+}
+
+.rate p{
+	font-size: 1.6em;
+} 
+
+button{
+	position: relative;
+    bottom: 2.25em;
+    left: 7.5em;
+}
+	
+
+
+
+
