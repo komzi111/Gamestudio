@@ -14,28 +14,29 @@
 	<div th:if="${@guessNumberController.solved}">
 		<p class="bg-success text-white p-3"> You guessed number</p>
 	</div>
+	<div th:replace="/fragments/gamenav :: navgame"></div>
 	<div class="container">
 		<header>
 			<h1 class="text-center animated bounce">Guess Number</h1>
 		</header>
 	</div>
 	<div class="container">
-		<div th:if="${ not @loginController.logged}">
-			<p>You are not  logged as. Please<a href="/">Log in:</a></p>
-		</div>
-			
-		<div th:if="${@loginController.logged}">
-			You are logged as <span th:text="${@loginController.loggedPlayer.name}"></span><br />
-		</div>
-	</div>
-	<div class="container">
-		<div class="row">
+		
 			<a href="/guessnumber">New Game</a>
-			<div th:utext="${@guessNumberController.numberField}"></div>
+			<a  href="/">Back to Homepage</a><br />
+			
+			
+			<p>Insert number from 1 to 10</p>
+			
+			<form action="/guessnumber/guess">
+				<div class="form-group">
+			<label>Insert Guess number:<input class=form-control type="text" placeholder="Guess number" name="number" autofocus /></label>
+			<input  class="btn btn-danger" type="submit" value="Submit" />
+				</div>
+			</form>
 			<div th:if="${@guessNumberController.guessedNumber != 0 }">
 				<div th:utext="${@guessNumberController.message}"></div>
 			</div>
-		</div>
 	</div>
 	<div class="container">
 		<div class="row">
@@ -56,10 +57,10 @@
 				</div>
 				<div th:if="${not @loginController.logged}">
 					<div class="box">
-					<div th:text="${@guessNumberController.averageRating}"></div>
+						<div th:text="${@guessNumberController.averageRating}"></div>
 						<p>You must be logged, when you want to rate game</p>
 						<span>Please<a href="/">log in</a></span>
-				</div>
+					</div>
 				</div>
 			</section>
 			</div>
@@ -78,6 +79,7 @@
 			</section>
 			
 			<section class="col-4 mt-5">
+			<h3>Comment</h3>
 				<div th:if="${@loginController.logged}">
 					<h3>Insert your comment</h3>
 						<form action="/guessnumber/comment/">
@@ -89,6 +91,7 @@
 				</div>
 				
 				<div th:if="${not @loginController.logged}">
+				
 					<div class="box">
 						<p>You must be logged, when you want to write comments</p>
 							<span>Please<a href="/">log in</a></span>

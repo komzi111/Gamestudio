@@ -8,23 +8,18 @@
     <link rel="stylesheet" href="/css/puzzle/puzzle.css">
 </head>
 <body>
-		<div class="bg-success" th:if="${@puzzleController.solved}">
-			<p class="text-center p-2">Solved the game</p>
-		</div>
+	<div class="bg-success" th:if="${@puzzleController.solved}">
+		<p class="text-center p-2">Solved the game</p>
+	</div>
+	<div th:replace="/fragments/gamenav :: navgame"></div>
+	
 	<div class="container">
-			
-			<div th:if="${ not @loginController.logged}">
-				You are not  logged as. Please<a href="/">log in:</a>
-			</div>
-			
-			<div th:if="${@loginController.logged}">
-				You are logged as <span th:text="${@loginController.loggedPlayer.name}"></span><a href="/logout"> Logout</a> <br />
-			</div>
-			
 			<h1 class="text-center">Puzzle</h1>
 			<div th:if="not ${@puzzleController.solved}">
 		        <div class="row">
 			        <div class="content">
+			        	<a  href="/puzzle">New Game </a>
+			        	<a  href="/"> Back to Homepage</a>
 			   		     <div th:utext="${@puzzleController.htmlField}"/> 
 			    	</div>
 		        </div>
@@ -72,6 +67,7 @@
 					</ol>
 			</section>
 			<section class="comment col-lg-4 col-sm-12">
+				<h3>Comment:</h3>
 				<div th:if="${@loginController.logged}">
 					<h3>Insert your comment</h3>
 						<form action="/puzzle/comment/">

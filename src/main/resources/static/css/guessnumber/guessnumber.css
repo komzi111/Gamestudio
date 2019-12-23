@@ -16,6 +16,12 @@ button{
     bottom: 2.25em;
     left: 7.5em;
 }
+.navbar{
+	background: purple;
+}
+.navbar>div{
+	color:white;
+}
 	
 
 

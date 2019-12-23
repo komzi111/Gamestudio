@@ -109,7 +109,7 @@ public class Field {
 	}
 	
 	public void shuffleField() {
-		for (int i = 0; i < 10; i++) {			
+		for (int i = 0; i < 20; i++) {			
 			Random random = new Random();
 			int ranInt = random.nextInt(fieldSize);
 			move(ranInt);
@@ -126,7 +126,7 @@ public int getPuzzleScores() {
 		if(isState()) {
             int seconds = (int)((System.currentTimeMillis() - startMillis) / 1000);
             
-            int score = (rowCount * columnCount * 4) - seconds;
+            int score = 400 - seconds;
             
             return score;
         }

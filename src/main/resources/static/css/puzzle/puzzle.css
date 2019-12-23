@@ -26,6 +26,22 @@ margin: 0 auto;
 	max-width: 20em;
 }
 
-.comment h3{
-	color: #bada55;
+
+.navbar{
+	background: purple;
 }
+.navbar>div{
+	color:white;
+}
+
+
+.content a {
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;
+	
+}
+.content a:first-child{
+	color: magenta;
+}
+

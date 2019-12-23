@@ -101,34 +101,19 @@ public class GuessNumberController {
 	}
 	
 	
-	public String getNumberField() {
-		Formatter f = new Formatter();
-		
-		f.format("<p>Insert random number from 1 to 10</p>");
-		
-		f.format("<form  action=\"/guessnumber/guess\">");
-		  f.format("<div class=\"form-group\" >");	
-			f.format("<label>Your Guess Number: <input class=\"form-control\" type=\"text\" name=\"number\" autofocus /></label><br/>");
-			f.format("<input type=\"submit\" value=\"Submit\">");
-		  f.format("</div>");
-		f.format("</form>");
-		
-		
-		return f.toString();
-		
-	}
+
 	
 	
 	public String getMessage() {
 		if (guessedNumber < randomNumber) {
 			Formatter f = new Formatter();
-			return f.format("<p>The number is lower than your guess</p>").toString();
+			return f.format("<p>Low</p>").toString();
 		}
 			
 			
 		if (guessedNumber > randomNumber) {
 			Formatter f = new Formatter();
-			 return f.format("<p>The number is higher than your guess</p>").toString();
+			 return f.format("<p>High</p>").toString();
 		}
 		
 		return message;

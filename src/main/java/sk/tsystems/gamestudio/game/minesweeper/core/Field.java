@@ -223,7 +223,7 @@ public class Field {
 		if(state == GameState.SOLVED) {
             int seconds = (int)((System.currentTimeMillis() - startMillis) / 1000);
             
-            int score = (rowCount * columnCount * 4) - seconds;
+            int score = 400 - seconds;
             
             return score;
         }

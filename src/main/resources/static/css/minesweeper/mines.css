@@ -4,3 +4,9 @@
 p{
 	margin-bottom: 0;
 }
+.navbar{
+	background: purple;
+}
+.navbar> div{
+	color: white;
+}
