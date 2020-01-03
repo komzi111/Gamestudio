@@ -1,0 +1,46 @@
+<div th:fragment="mainnav">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<div class="container">
+	
+	  <a class="navbar-brand" href="#">LOGO GAMESTUDIO</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+	    <ul class="navbar-nav">
+	      <li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle text-black" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Login
+	        </a>
+	    	<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	          <div th:if="${not @loginController.logged}">
+				<form  action="/login" method="POST">
+				<div class="form-group">
+				<div th:text="${@loginController.message}"/>
+					<label>Name:
+						<input class="form-control" type="text"  name="name"/>
+					</label>
+					<label>Password:
+						<input class="form-control" type="password" name="password"/>
+					</label>
+				</div>
+						<input  class=" form-control btn btn-primary" type="submit" value="Login" />
+				</form>
+				<p class="text-center mt-1 mb-1 ">or</p>
+				<a class="dropdown-item text-danger" href="/register">Create a new account</a>
+		</div>
+	        </div>
+	      </li>
+	    </ul>
+	  </div>
+	</div>
+</nav>
+
+
+
+
+
+
+
+</div>

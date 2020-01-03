@@ -16,24 +16,31 @@ import sk.tsystems.gamestudio.service.PlayerService;
 public class LoginController {
 	
 	private Player loggedPlayer;
+	private String message;
 	
 	@Autowired
 	private PlayerService playerService;
 	
 	@RequestMapping("/")
 	public String index() {
+		message = "";
 		return "index";
 	}
 	
 	@RequestMapping("/login")
 	public String login( Player player) {
-		
+		Player playerInDb = playerService.getPlayer(player.getName());
+		if(playerInDb != null) {
+			message = "User exists";
+		}
 		if(player.getName().length() <=2  || player.getPassword().length() <= 3) {
-			return "redirect:/";
+			message = "Invalid name or username";
+			return "index";
 		}
 		else 
 			if(playerService.getPlayer(player.getName()).getPassword().equals(player.getPassword()))
 				loggedPlayer = player;
+				message = "You log in successfully";
 			return "redirect:/";
 		
 		
@@ -51,6 +58,9 @@ public class LoginController {
 
 	public Player getLoggedPlayer() {
 		return loggedPlayer;
+	}
+	public String getMessage() {
+		return message;
 	}
 	
 	

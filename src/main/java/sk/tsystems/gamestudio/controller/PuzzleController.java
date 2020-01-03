@@ -58,8 +58,12 @@ public class PuzzleController {
 	@RequestMapping("/puzzle/comment")
 	public String comment(String text) {
 		commentText = text;
-		commentService.addComment(new Comment(loginController.getLoggedPlayer().getName(), "puzzle", commentText));
-		return "puzzle";
+		if(commentText.trim().length() < 2 ) {
+			return "puzzle";
+		}else {
+			commentService.addComment(new Comment(loginController.getLoggedPlayer().getName(), "puzzle", commentText));
+			return "puzzle";
+		}
 	}
 
 	@RequestMapping("/puzzle/rating")

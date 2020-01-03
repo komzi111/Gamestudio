@@ -77,8 +77,13 @@ public class GuessNumberController {
 	@RequestMapping("/guessnumber/comment")
 	public String comment(String text) {
 		commentText = text;
-		commentService.addComment(new Comment(loginController.getLoggedPlayer().getName(),"guessnumber", commentText));
-		return "guessnumber";
+		if(commentText.trim().length() < 2) {
+			return "guessnumber";
+		}
+		else {
+			commentService.addComment(new Comment(loginController.getLoggedPlayer().getName(),"guessnumber", commentText));
+			return "guessnumber";
+		}
 	}
 	
 	@RequestMapping("/guessnumber/rating")
@@ -143,7 +148,7 @@ public class GuessNumberController {
 	private int getGuessNumberScores() {
 		if(isSolved()) {
 	        int seconds = (int)((System.currentTimeMillis() - startMillis) / 1000);
-	        int score = 300 - seconds;
+	        int score = 600 - seconds;
 	        return score;
         }
 		

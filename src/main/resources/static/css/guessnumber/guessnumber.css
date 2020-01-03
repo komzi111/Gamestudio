@@ -22,8 +22,32 @@ button{
 .navbar>div{
 	color:white;
 }
-	
+.guess label{
+	width: 75%;
+	font-weight: bold;
+}
+.guess p{
+	margin: 0;
+	font-size: 1.2em;
+}
+.guess a{
+	font-weight: bold;
+	color: black;
+	text-decoration: none;
+	font-size: 1.2em;
+}
 
-
-
-
+.btn{
+	bottom: 3px;
+    position: relative;
+}
+.btn-primary{
+	margin-top: -4.4em;
+}
+h5{
+	margin-top: 6em;
+}
+.solved p{
+	margin:0;
+	text-align: center;
+}

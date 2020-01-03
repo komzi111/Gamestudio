@@ -16,6 +16,7 @@ import sk.tsystems.gamestudio.service.PlayerService;
 @Scope(WebApplicationContext.SCOPE_SESSION)
 public class RegisterController {
 	
+	private String message;
 	
 	@Autowired PlayerService playerService;
 	
@@ -24,24 +25,28 @@ public class RegisterController {
 	
 	@RequestMapping("/register")
 	public String index() {
+		message = "";
 		return "register";
 	}
 	
 	
 	@RequestMapping("/register/process")
 		public String processInput(Player player) {
-		if(player.getName().length() <= 2 || player.getPassword().length() <= 3  ) {
+		Player existPlayer = playerService.getPlayer(player.getName());
+		if(player.getName().length() <= 2 || player.getPassword().length() <= 3) {
+			message = "Invalid name or invalid password";
 			return "register";
-		}else
-			playerService.addPlayer(new Player(player.getName(),player.getPassword()));
-			loginController.login(player);
+		}
+		else
+			if(existPlayer == null) {
+				playerService.addPlayer(new Player(player.getName(),player.getPassword()));
+				loginController.login(player);
+			}
 		return "redirect:/";
 	}
 	
 	public String getMessage() {
-		
-		
-		return "register";
+		return message;
 	}
 
 		

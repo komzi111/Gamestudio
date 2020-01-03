@@ -11,9 +11,11 @@
     
 </head>
 <body>
+
+<div th:replace="/fragments/gamenav :: navgame"/>
 		<div class="container">
 		<header>
-			<h1 class="text-center">Registration</h1>
+			<h5 class="text-center">Registration</h5>
 		</header>
 		</div>
 		
@@ -21,6 +23,7 @@
 				<div class="box">
 					<form action="/register/process" method="POST">
 					<div class="form-group">
+						<div th:text="${@registerController.message}"></div>
 						<label>
 							Insert your name:<input class="form-control" type="text" name="name" />
 						</label>
@@ -34,6 +37,7 @@
 		</div>
 	
 	
+<div th:replace="/fragments/footer :: globalfooter"></div>
 
 </body>
 </html>

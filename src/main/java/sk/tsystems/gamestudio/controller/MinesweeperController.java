@@ -45,10 +45,7 @@ public class MinesweeperController {
 	
 	@RequestMapping("/minesweeper")
 	public String index() {
-			field = new Field(9,9,4);
-			
-			
-		
+			field = new Field(10,10,9);
 		return "minesweeper";
 	}
 	
@@ -79,8 +76,14 @@ public class MinesweeperController {
 	@RequestMapping("/minesweeper/comment")
 	public String comment(String text) {
 		commentText = text;
-		commentService.addComment(new Comment(loginController.getLoggedPlayer().getName(),"minesweeper", commentText));
-		return "minesweeper";
+		
+		if(commentText.trim().length() < 2) {
+			return "minesweeper";
+		}
+		else {
+			commentService.addComment(new Comment(loginController.getLoggedPlayer().getName(),"minesweeper", commentText));
+			return "minesweeper";
+		}
 	}
 	
 	@RequestMapping("/minesweeper/rating")

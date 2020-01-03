@@ -1,0 +1,30 @@
+body{
+	overflow: hidden;
+}
+ 
+ 
+ /* a{
+ margin-top: 350px;	} */
+ 
+ .global-footer{
+ 
+ margin-top: 225px;}
+ 
+ .content{
+ 	background: white;
+ 	width: 25em;
+ 	height: 10em;
+ 	border-radius: 0.5em;
+ 	margin: 18em auto ;
+ 	padding: 2em;
+ 	border: 2px solid black;
+ }
+ .err-404{
+ 	background: url('/images/errors/errorpage404.jpg') no-repeat  -158px -145px;
+ }
+ 
+ .err-500{
+ 	background: url('/images/errors/error500.jpg') no-repeat  -79px;
+ }
+ 
+ 

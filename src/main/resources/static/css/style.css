@@ -24,13 +24,23 @@ h1{
 	letter-spacing:  0.1em;
 }
 .strip{
-	background: beige;
+	background: black;
 }
+
 
 header p{
 	font-size: 1.5em;
 	text-transform: uppercase;
+	color:white;
+	padding-bottom: 0.7em;
 }
+header h1 {
+	color: white;
+	font-weight: bolder;
+	margin:0;
+	padding: 0.6em;
+}
+
 .dropdown-menu.show{
 	
 	padding: 0.4em;
@@ -42,6 +52,14 @@ header p{
 {
 	color:black;
 }
+
+
+label{
+	width: 100%;
+}
+
+
+
 
 /***
 *********
@@ -63,7 +81,7 @@ header p{
 .rating>label {
     position: relative;
     width: 1em;
-    font-size: 4vw;
+    font-size: 3vw;
     color: #ffff00;
     cursor: pointer
 }
@@ -91,11 +109,26 @@ header p{
 	font-size: 1.6em;
 }
 
+.navbar{
+	background: purple;
+}
+.navbar>div{
+	color:white;
+}
+.global-footer p{
+	margin:0;
+}
+.pre-footer{
+	background: black;
+	padding: 0.8em;
+	margin-top:2em;
+}
+.pre-footer{
+	color: white;
+}
 
-
-
-@media (max-width:760px){
-	.card-body a {
-		font-size: 0.6em  ;
+@media (max-width:992px){
+	.card {
+		margin-bottom: 1em; 
 	}
 }

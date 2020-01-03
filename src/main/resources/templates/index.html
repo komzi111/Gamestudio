@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -10,42 +11,10 @@
     
 </head>
 <body>
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	<div class="container">
-	
-	  <a class="navbar-brand" href="#">LOGO T-SYSTEMS</a>
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-	    <span class="navbar-toggler-icon"></span>
-	  </button>
-	  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-	    <ul class="navbar-nav">
-	      <li class="nav-item dropdown">
-	        <a class="nav-link dropdown-toggle text-black" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	          Login
-	        </a>
-	    	<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-	          <div th:if="${not @loginController.logged}">
-				<form  action="/login">
-				<div class="form-group">
-					<label>Name:
-						<input class="form-control" type="text"  name="name"/>
-					</label>
-					<label>Password:
-						<input class="form-control" type="password" name="password"/>
-					</label>
-				</div>
-						<input  class=" form-control btn btn-primary" type="submit" value="Login" />
-				</form>
-				<p class="text-center mt-1 mb-1 ">or</p>
-				<a class="dropdown-item text-danger" href="/register">Create a new account</a>
-		</div>
-	        </div>
-	      </li>
-	    </ul>
-	  </div>
-	</div>
-</nav>
+<div th:if="${@loginController.logged}">
+	<div th:text="${@loginController.message}"/>
+</div>
+<div th:replace="/fragments/mainnav :: mainnav"/>
 
 
 <div class="strip">
@@ -69,7 +38,7 @@
 	<div class="row">
 		<section class="col-lg-4 col-md-6 col-sm-12">
 			<div class="card">
-  				<img src="/images/minesweeper/mines.jpg" class="card-img-top" alt="minesweeperimage">
+  				<img src="/images/minesweeper/Mines.PNG" class="card-img-top" alt="minesweeperimage">
   				<div class="card-body">
     				<p class="card-text"><a href="/minesweeper">Minesweeper</a></p>
   			</div>
@@ -94,11 +63,7 @@
 	</div>
 	</div>
 	
-	<!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<div th:replace="/fragments/footer :: globalfooter" />
 
     
 </body>
