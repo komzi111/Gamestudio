@@ -1,12 +1,33 @@
 .content{
 	margin: 0 auto;	
 }
+.content a{
+	color: white;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+.content span{
+	color: #00ff00;
+	font-weight: bold;
+}
 p{
 	margin-bottom: 0;
 }
 .navbar{
-	background: purple;
+	background: white;
 }
-.navbar> div{
-	color: white;
-}
+.navbar>div{
+	color:purple;
+	font-weight: bolder;
+	}
+.btn-primary{
+	position: relative;
+    bottom: 2.5em;
+    left: 8.5em;
+    }
+    
+ .box{
+ background: white;
+ padding: 0.6em;
+ border-radius: 0.5em;
+ }

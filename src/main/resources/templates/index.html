@@ -6,11 +6,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="/css/style.css"/>
     
 </head>
-<body>
+<body class="mainbg">
 <div th:if="${@loginController.logged}">
 	<div th:text="${@loginController.message}"/>
 </div>
@@ -20,7 +19,7 @@
 <div class="strip">
 <div class="container">
 		<header>
-		    <h1 class="text-center animated flip-in-x">Welcome to Gamestudio</h1>
+		    <h1 class="text-center">Welcome to Gamestudio</h1>
 			<p class="text-center">Choose your game</p>
 		</header>
 		   

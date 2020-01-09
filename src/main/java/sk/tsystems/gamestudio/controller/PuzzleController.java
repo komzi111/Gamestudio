@@ -58,7 +58,7 @@ public class PuzzleController {
 	@RequestMapping("/puzzle/comment")
 	public String comment(String text) {
 		commentText = text;
-		if(commentText.trim().length() < 2 ) {
+		if(commentText.trim().length() < 2 || commentText.length() > 255) {
 			return "puzzle";
 		}else {
 			commentService.addComment(new Comment(loginController.getLoggedPlayer().getName(), "puzzle", commentText));
@@ -71,7 +71,10 @@ public class PuzzleController {
 		try {
 
 			int parseRating = Integer.parseInt(rating);
-			ratingService.setRating(new Rating(loginController.getLoggedPlayer().getName(), "puzzle", parseRating));
+			if(parseRating > 0 && parseRating <= 5) {
+				ratingService.setRating(new Rating(loginController.getLoggedPlayer().getName(), "puzzle", parseRating));				
+			}
+			
 
 		} catch (Exception e) {
 			e.getMessage();

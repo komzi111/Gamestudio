@@ -77,7 +77,7 @@ public class GuessNumberController {
 	@RequestMapping("/guessnumber/comment")
 	public String comment(String text) {
 		commentText = text;
-		if(commentText.trim().length() < 2) {
+		if(commentText.trim().length() < 2 || commentText.length() > 255)  {
 			return "guessnumber";
 		}
 		else {
@@ -91,7 +91,10 @@ public class GuessNumberController {
 		try {
 			
 			int parseRating = Integer.parseInt(rating);
-			ratingService.setRating(new Rating(loginController.getLoggedPlayer().getName(),"guessnumber",parseRating));
+			if(parseRating > 0 && parseRating <= 5) {
+				
+				ratingService.setRating(new Rating(loginController.getLoggedPlayer().getName(),"guessnumber",parseRating));
+			}
 			
 		} catch (Exception e) {
 				e.getMessage();		}

@@ -14,6 +14,7 @@ public class Rating {
 	private int ident;
 	private String username;
 	private String game;
+	
 	private int rating;
 	
 	

@@ -3,13 +3,13 @@
 
 	<nav class="navbar p-3">
 		<div class="container">
-			<a class="text-white" href="#">Logo Gamestudio</a>
-			<div th:if="${ not @loginController.logged}">
-					You are not  logged  Please<a class="text-white" href="/"> LOG IN</a>
+			<a class="text-white" href="/"><img width="150"  src="/images/LogoGS.png" alt="GamestudioLogo" /></a>
+			<div class="text-danger" th:if="${ not @loginController.logged}">
+					You are not  logged.  Please<a class="text-dark" href="/"> LOG IN</a>
 				</div>
 				
 				<div th:if="${@loginController.logged}">
-					You are logged as <span th:text="${@loginController.loggedPlayer.name}"></span><a class="text-white" href="/logout"> | Logout</a> <br />
+					You are logged as <span th:text="${@loginController.loggedPlayer.name}"></span><a class="text-dark" href="/logout"> | Logout</a> <br />
 				</div>
 		</div>
 	</nav>

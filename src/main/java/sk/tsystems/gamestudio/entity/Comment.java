@@ -12,6 +12,7 @@ public class Comment {
 	private int ident;
 	private String username;
 	private String game;
+	
 	private String content;
 	
 	public Comment() {

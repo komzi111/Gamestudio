@@ -17,11 +17,12 @@ button{
     left: 7.5em;
 }
 .navbar{
-	background: purple;
+	background: white;
 }
 .navbar>div{
-	color:white;
-}
+	color:purple;
+	font-weight: bolder;
+	}
 .guess label{
 	width: 75%;
 	font-weight: bold;
@@ -51,3 +52,20 @@ h5{
 	margin:0;
 	text-align: center;
 }
+
+/*
+***
+MEDIA QUERIES
+***
+*/
+
+@media (max-width: 992px){
+	h5{
+	margin: 0;
+	}
+	.comment,.score{
+	margin-top: 1.5em !important;
+	}
+}
+
+

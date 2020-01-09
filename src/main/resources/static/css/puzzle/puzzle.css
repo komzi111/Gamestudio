@@ -1,5 +1,6 @@
-.content{
-	
+
+
+.content{	
 margin: 0 auto;
 }
 .list-item{
@@ -8,7 +9,6 @@ margin: 0 auto;
     margin: 0 auto;
     
 }
-
 .list-item li{
     display: inline-block;
     font-size: 1.2em;
@@ -25,12 +25,18 @@ margin: 0 auto;
 .list-group{
 	max-width: 20em;
 }
-
-
-
-.navbar>div{
-	color:white;
+.box{
+ background: white;
+ padding: 0.6em;
+ border-radius: 0.5em;
+ }
+.navbar{
+	background: white;
 }
+.navbar>div{
+	color:purple;
+	font-weight: bolder;
+	}
 
 
 .content a {
@@ -42,4 +48,8 @@ margin: 0 auto;
 .content a:first-child{
 	color: magenta;
 }
-
+.btn-primary{
+	position: relative;
+    bottom: 2.6em;
+    left: 8.5em;
+} 

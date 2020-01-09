@@ -45,7 +45,7 @@ public class MinesweeperController {
 	
 	@RequestMapping("/minesweeper")
 	public String index() {
-			field = new Field(10,10,9);
+			field = new Field(9,9,5);
 		return "minesweeper";
 	}
 	
@@ -77,7 +77,7 @@ public class MinesweeperController {
 	public String comment(String text) {
 		commentText = text;
 		
-		if(commentText.trim().length() < 2) {
+		if(commentText.trim().length() < 2 || commentText.length() > 255) {
 			return "minesweeper";
 		}
 		else {
@@ -91,7 +91,10 @@ public class MinesweeperController {
 		try {
 			
 			int parseRating = Integer.parseInt(rating);
-			ratingService.setRating(new Rating(loginController.getLoggedPlayer().getName(),"minesweeper",parseRating));
+			if(parseRating > 0 && parseRating <= 5) {
+				
+				ratingService.setRating(new Rating(loginController.getLoggedPlayer().getName(),"minesweeper",parseRating));
+			}
 			
 		} catch (Exception e) {
 				e.getMessage();		}
@@ -108,7 +111,7 @@ public class MinesweeperController {
 	
 	public String getHtmlField() {
 		Formatter f = new Formatter();
-		f.format("<table>\n");
+		f.format("<table class=\"table-responsive\">\n");
 		for (int row = 0; row < field.getRowCount(); row++) {
 			f.format("<tr>\n");
 			for (int column = 0; column < field.getColumnCount(); column++) {

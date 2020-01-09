@@ -3,7 +3,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 	<div class="container">
 	
-	  <a class="navbar-brand" href="#">LOGO GAMESTUDIO</a>
+	  <a class="navbar-brand" href="/"><img width="150"  src="/images/LogoGS.png" alt="GamestudioLogo" /></a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
@@ -15,7 +15,7 @@
 	        </a>
 	    	<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	          <div th:if="${not @loginController.logged}">
-				<form  action="/login" method="POST">
+				<form id="loginvalidation" action="/login" method="POST">
 				<div class="form-group">
 				<div th:text="${@loginController.message}"/>
 					<label>Name:

@@ -98,9 +98,6 @@ public class Field {
 			tile.setState(Tile.State.CLOSED);
 		}
 
-    	
-    	
-      //  throw new UnsupportedOperationException("Method markTile not yet implemented");
     }
 
     /**

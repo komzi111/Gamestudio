@@ -1,7 +1,12 @@
-
 body{
-background: lightgrey;
-
+background: #DBD9D9;
+background: -moz-radial-gradient(center, #DBD9D9 0%, #8D96A5 44%, #373160 100%);
+background: -webkit-radial-gradient(center, #DBD9D9 0%, #8D96A5 44%, #373160 100%);
+background: radial-gradient(ellipse at center, #DBD9D9 0%, #8D96A5 44%, #373160 100%);
+}
+.mainbg{
+background: url('/images/gamestudiobg.jpg');
+background-size: cover;
 }
 
 h1{
@@ -109,11 +114,20 @@ label{
 	font-size: 1.6em;
 }
 
+.avgrate{
+	font-weight: bold;
+	color: #00ff00;
+	text-align: center;
+	background: black;
+	border-radius: 50%;
+	display: inline-block;
+	padding: 0.6em;
+	}
 .navbar{
 	background: purple;
 }
 .navbar>div{
-	color:white;
+	color:black;
 }
 .global-footer p{
 	margin:0;
@@ -126,9 +140,43 @@ label{
 .pre-footer{
 	color: white;
 }
+.error{
+	color: red;
+	text-align: center;
+}
+.size{
+	font-size: 0.5em;
+}
+
+
+
+
+
+#success{
+	display: none;
+	background: green;
+	color: white;
+	text-transform: uppercase;
+}
+
+.games li:first-child, .social-network li:first-child{
+	list-style: none;
+	color: #00ff40;
+	text-transform: uppercase;
+	font-style: italic;
+}
+
 
 @media (max-width:992px){
 	.card {
 		margin-bottom: 1em; 
 	}
 }
+
+@media (max-width:575px){
+	.pre-footer  ul{
+		margin-left: 12.09em; 
+	}
+}
+
+
