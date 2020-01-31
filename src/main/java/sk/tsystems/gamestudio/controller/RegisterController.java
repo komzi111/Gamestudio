@@ -23,6 +23,9 @@ public class RegisterController {
 	@Autowired LoginController loginController;
 	
 	
+	
+	
+	
 	@RequestMapping("/register")
 	public String index() {
 		message = "";

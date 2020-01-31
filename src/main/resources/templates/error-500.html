@@ -3,10 +3,9 @@
 <head>
     <title>Internal Server Error</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-    <link rel="stylesheet" href="/css/error.css"/>
+    <link rel="stylesheet" th:href="@{/css/error.css}"/>
     
 </head>
 <body class="err-500">
@@ -14,7 +13,7 @@
 	<div class="container">
 	<div class="content">
 		<h4>ERROR 500 - INTERNAL SERVER ERROR :(</h4>
-		<a class="btn btn-danger" href="/">Back Home</a>
+		<a class="btn btn-danger" th:href="@{/}">Back Home</a>
 	</div>
 		
 	</div>

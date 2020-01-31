@@ -4,9 +4,9 @@
 <head>
     <title>Home page</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
     
 </head>
 <body class="mainbg">
@@ -19,43 +19,39 @@
 <div class="strip">
 <div class="container">
 		<header>
-		    <h1 class="text-center">Welcome to Gamestudio</h1>
+		    <h1 class="text-center">Welcome to Game studio</h1>
 			<p class="text-center">Choose your game</p>
 		</header>
 		   
 </div>
 	</div>
-	<div class="container">
-	
-	
-	
-	<div th:if="${@loginController.logged}">
-	You are logged as <span th:text="${@loginController.loggedPlayer.name}"></span>
-	<a href="/logout">Logout</a>
+		<div class="container">
+		<div th:if="${@loginController.logged}">
+		You are logged as <span th:text="${@loginController.loggedPlayer.name}"></span>
+		<a th:href="@{/logout}">Logout</a>
 	</div>
-	
 	<div class="row">
-		<section class="col-lg-4 col-md-6 col-sm-12">
+		<section class="col-lg-4  col-12">
 			<div class="card">
-  				<img src="/images/minesweeper/Mines.PNG" class="card-img-top" alt="minesweeperimage">
+  				<img th:src="@{/images/minesweeper/Mines.PNG}" class="card-img-top" alt="minesweeperimage">
   				<div class="card-body">
-    				<p class="card-text"><a href="/minesweeper">Minesweeper</a></p>
+    				<p class="card-text"><a th:href="@{/minesweeper}">Minesweeper</a></p>
   			</div>
 				</div>
 		</section>	
-		<section class="col-lg-4 col-md-6 col-sm-12">	
+		<section class="col-lg-4  col-12">	
 		<div class="card">
-  				<img src="/images/puzzle/15Puzzle.png" class="card-img-top" alt="puzzleimage">
+  				<img th:src="@{/images/puzzle/15Puzzle.png}" class="card-img-top" alt="puzzleimage">
   				<div class="card-body">
-    				<p class="card-text"><a href="/puzzle">Puzzle</a></p>
+    				<p class="card-text"><a th:href="@{/puzzle}">Puzzle</a></p>
   			</div>
 				</div>
 		</section>
-		<section class="col-lg-4 col-md-6 col-sm-12">
+		<section class="col-lg-4 col-12">
 			<div class="card">
-  				<img src="/images/guessnumber/guess.png" class="card-img-top" alt="guessnumberimage">
+  				<img th:src="@{/images/guessnumber/guess.png}" class="card-img-top" alt="guessnumberimage">
   				<div class="card-body">
-    				<p class="card-text"><a href="/guessnumber">Guess number</a></p>
+    				<p class="card-text"><a th:href="@{/guessnumber}">Guess number</a></p>
   			</div>
 				</div>
 		</section>

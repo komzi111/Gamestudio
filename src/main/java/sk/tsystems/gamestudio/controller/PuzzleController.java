@@ -3,6 +3,8 @@ package sk.tsystems.gamestudio.controller;
 import java.util.Formatter;
 import java.util.List;
 
+import javax.servlet.ServletContext;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -37,6 +39,11 @@ public class PuzzleController {
 	@Autowired
 	private RatingService ratingService;
 
+	
+	@Autowired
+	private ServletContext servletContext;
+	
+	
 	@RequestMapping("/puzzle")
 	public String puzzle() {
 
@@ -98,8 +105,8 @@ public class PuzzleController {
 				f.format("<td>\n");
 				Tile tile = field.getTile(row, column);
 				if (tile.getValue() != 0) {
-					f.format("<a href='/puzzle/move?tile=%d'><img src='/images/puzzle/puzzle%d.png'></img></a>",
-							tile.getValue(), tile.getValue());
+					f.format("<a href='%s/puzzle/move?tile=%d'><img src='%s/images/puzzle/puzzle%d.png'></img></a>",
+							servletContext.getContextPath(), tile.getValue(), servletContext.getContextPath(), tile.getValue()) ;
 				}
 				f.format("</td>\n");
 			}

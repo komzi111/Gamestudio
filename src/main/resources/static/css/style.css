@@ -5,7 +5,7 @@ background: -webkit-radial-gradient(center, #DBD9D9 0%, #8D96A5 44%, #373160 100
 background: radial-gradient(ellipse at center, #DBD9D9 0%, #8D96A5 44%, #373160 100%);
 }
 .mainbg{
-background: url('/images/gamestudiobg.jpg');
+background: url('../images/gamestudiobg.jpg');
 background-size: cover;
 }
 

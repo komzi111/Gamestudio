@@ -1,5 +1,7 @@
 package sk.tsystems.gamestudio.controller;
 
+import javax.servlet.ServletContext;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -20,6 +22,12 @@ public class LoginController {
 	
 	@Autowired
 	private PlayerService playerService;
+	
+	@Autowired
+	private ServletContext servletContext;
+	
+	
+	
 	
 	@RequestMapping("/")
 	public String index() {

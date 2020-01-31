@@ -4,6 +4,8 @@ import java.util.Formatter;
 import java.util.List;
 import java.util.Random;
 
+import javax.servlet.ServletContext;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -48,6 +50,9 @@ public class GuessNumberController {
 	@Autowired
 	private RatingService ratingService;
 	
+	@Autowired
+	private ServletContext servletContext;
+
 	
 	@RequestMapping("/guessnumber")
 	public String index() {

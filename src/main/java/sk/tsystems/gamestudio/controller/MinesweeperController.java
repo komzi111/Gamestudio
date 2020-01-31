@@ -3,6 +3,8 @@ package sk.tsystems.gamestudio.controller;
 import java.util.Formatter;
 import java.util.List;
 
+import javax.servlet.ServletContext;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -42,6 +44,11 @@ public class MinesweeperController {
 	
 	@Autowired
 	private RatingService ratingService;
+	
+	
+	@Autowired
+	private ServletContext servletContext;
+	
 	
 	@RequestMapping("/minesweeper")
 	public String index() {
@@ -119,18 +126,18 @@ public class MinesweeperController {
 				Tile tile = field.getTile(row, column);
 				
 				if (tile.getState() == Tile.State.CLOSED) {
-					f.format("<a href='/minesweeper/open?row=%d&column=%d'><img src='/images/minesweeper/closed.png'></img></a>",row,column);
+					f.format("<a href='%s/minesweeper/open?row=%d&column=%d'><img src='%s/images/minesweeper/closed.png'></img></a>",servletContext.getContextPath(),row,column,servletContext.getContextPath());
 				} else if (tile.getState() == Tile.State.OPEN) {
 					if (tile instanceof Clue) {
 						Clue clue = (Clue) tile;
-						f.format( "<a href='/minesweeper/open?row=%d&column=%d'><img src='/images/minesweeper/open%d.png'></img></a>", row,column,((Clue) tile).getValue());
+						f.format( "<a href='%s/minesweeper/open?row=%d&column=%d'><img src='%s/images/minesweeper/open%d.png'></img></a>",servletContext.getContextPath(), row,column,servletContext.getContextPath(),((Clue) tile).getValue());
 					} 
 					else if (tile instanceof Mine) {
 						Mine mine = (Mine) tile;
-						f.format("<a href='/minesweeper/open?row=%d&column=%d'><img src='/images/minesweeper/mine.png'></img></a>",row,column);
+						f.format("<a href='%s/minesweeper/open?row=%d&column=%d'><img src='%s/images/minesweeper/mine.png'></img></a>",servletContext.getContextPath(),row,column,servletContext.getContextPath());
 					}
 				} else if (tile.getState() == Tile.State.MARKED) {
-					f.format("<a href='/minesweeper/mark?row=%d&column=%d'><img src='/images/minesweeper/marked.png'></img></a>",row,column);
+					f.format("<a href='%s/minesweeper/mark?row=%d&column=%d'><img src='%s/images/minesweeper/marked.png'></img></a>",servletContext.getContextPath(),row,column,servletContext.getContextPath());
 				}
 					
 				f.format("</td>\n");
