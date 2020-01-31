@@ -50,9 +50,7 @@ public class GuessNumberController {
 	@Autowired
 	private RatingService ratingService;
 	
-	@Autowired
-	private ServletContext servletContext;
-
+	
 	
 	@RequestMapping("/guessnumber")
 	public String index() {

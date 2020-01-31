@@ -98,14 +98,14 @@ public class PuzzleController {
 
 	public String getHtmlField() {
 		Formatter f = new Formatter();
-		f.format("<table class=\"table table-bordered\">\n");
+		f.format("<table class=\"table table-bordered table-responsive\">\n");
 		for (int row = 0; row < field.getRowCount(); row++) {
 			f.format("<tr>\n");
 			for (int column = 0; column < field.getColumnCount(); column++) {
 				f.format("<td>\n");
 				Tile tile = field.getTile(row, column);
 				if (tile.getValue() != 0) {
-					f.format("<a href='%s/puzzle/move?tile=%d'><img src='%s/images/puzzle/puzzle%d.png'></img></a>",
+					f.format("<a href='%s/puzzle/move?tile=%d'><img class=\"img-responsive\" src='%s/images/puzzle/puzzle%d.png'></img></a>",
 							servletContext.getContextPath(), tile.getValue(), servletContext.getContextPath(), tile.getValue()) ;
 				}
 				f.format("</td>\n");

@@ -22,9 +22,6 @@ margin: 0 auto;
 .card-img-top{
 	width: 10em;
 }
-.list-group{
-	max-width: 20em;
-}
 .box{
  background: white;
  padding: 0.6em;
@@ -53,3 +50,7 @@ margin: 0 auto;
     bottom: 2.6em;
     left: 8.5em;
 } 
+
+
+
+

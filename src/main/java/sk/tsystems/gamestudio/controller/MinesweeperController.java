@@ -52,7 +52,7 @@ public class MinesweeperController {
 	
 	@RequestMapping("/minesweeper")
 	public String index() {
-			field = new Field(9,9,5);
+			field = new Field(9,9,10);
 		return "minesweeper";
 	}
 	

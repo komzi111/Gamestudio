@@ -167,16 +167,20 @@ label{
 }
 
 
+li{
+	overflow-wrap: break-word;
+}
+.list-group-item{
+	overflow-wrap: break-word;
+}
+
 @media (max-width:992px){
 	.card {
 		margin-bottom: 1em; 
 	}
 }
 
-@media (max-width:575px){
-	.pre-footer  ul{
-		margin-left: 12.09em; 
-	}
-}
+
+
 
 
